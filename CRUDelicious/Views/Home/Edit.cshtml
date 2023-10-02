@@ -1,0 +1,44 @@
+@model Dish
+
+<div>
+    <h2 class="display-4 text-center">Edit @Model.Name</h2>
+    <div class="card shadow mx-auto w-75">
+        <div class="card-body">
+            <form asp-action="Update" asp-controller="Home" asp-route-id=@Model.DishId method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Chef" class="form-label"></label>
+                    <input asp-for="Chef" class="form-control">
+                    <span class="text-danger" asp-validation-for="Chef"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Tastiness" class="form-label"></label>
+                    <select asp-for="Tastiness" class="form-select">
+                        <option disabled selected>---Select Tastiness Level---</option>
+                        <option value=1 >1</option>
+                        <option value=2 >2</option>
+                        <option value=3 >3</option>
+                        <option value=4 >4</option>
+                        <option value=5 >5</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Tastiness"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Calories" class="form-label"></label>
+                    <input asp-for="Calories" class="form-control">
+                    <span class="text-danger" asp-validation-for="Calories"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" cols="30" rows="5" class="form-control"></textarea>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="text-end"><button class="btn btn-success">Edit Dish</button></div>
+            </form>
+        </div>
+    </div>
+</div>
